@@ -36,3 +36,14 @@ class Product(models.Model):
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
         ordering = ('name',)
+
+class Contacts(models.Model):
+    contact_name = models.CharField(max_length=100, verbose_name='Имя')
+    phone = models.CharField(max_length=50, verbose_name='Телефон')
+    message = models.TextField(verbose_name='Сообщение')
+
+    def __str__(self):
+        return self.contact_name
+
+    class Meta:
+        pass

@@ -21,3 +21,6 @@ def contacts(request):
         message = request.POST.get('message')
         print(f'You have new message from {name} ({email}): {message}')
     return render(request, 'catalog/contacts.html', context)
+
+def index(request):
+    return render(request, 'catalog/index.html')
