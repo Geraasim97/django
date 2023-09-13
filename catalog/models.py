@@ -46,4 +46,5 @@ class Contacts(models.Model):
         return self.contact_name
 
     class Meta:
-        pass
+        verbose_name = "Продукт"
+        verbose_name_plural = "Продукты"
