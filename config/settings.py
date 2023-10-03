@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'catalog',
     'blog',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'basebase',
+        'NAME': 'pizza_boss',
         'USER': 'postgres',
         'PASSWORD': '453453',
 
@@ -139,3 +140,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = localconfig.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = localconfig.EMAIL_PASSWORD
+EMAIL_RECEPIENT_LIST = localconfig.EMAIL_RECEPIENT_LIST
+
+#EMAIL_FILE_PATH = BASE_DIR / 'users'/ 'sent_emails'
+
+AUTH_USER_MODEL = 'users.User'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
